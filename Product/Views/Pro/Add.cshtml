@@ -1,0 +1,27 @@
+﻿@model Product.Models.tblitem
+@{
+    ViewBag.Title = "Add";
+}
+<h2>Add</h2>
+@using (Html.BeginForm("Add", "Pro", FormMethod.Post))
+{
+    <table class="table-bordered table-hover">
+        @Html.HiddenFor(x => x.id)
+        <tr style="margin:10px">
+            <th>Product Name:</th>
+            <td>@Html.TextBoxFor(x => x.product_name)</td>
+        </tr>
+        <tr>
+            <th>Product Model:</th>
+            <td>@Html.TextBoxFor(x => x.product_model)</td>
+        </tr>
+        <tr>
+            <th>Product Price:</th>
+            <td>@Html.TextBoxFor(x => x.product_price)</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="@ViewBag.BT" class="btn btn-success" /></td>
+        </tr>
+    </table>
+}
